@@ -26,7 +26,7 @@ public class InventoryUI : MonoBehaviour
         {
             InventorySlot inventorySlot =
                 GameObject.Instantiate(_slotPrefab, _GridInventory).GetComponent<InventorySlot>();
-            inventorySlot.SetupSlot(item);
+            if(item) inventorySlot.SetupSlot(item);
         }
     }
 }

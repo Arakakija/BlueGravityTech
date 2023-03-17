@@ -1,14 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ToolTip : MonoBehaviour
 {
     [SerializeField] private Vector2 offset;
     private RectTransform rectTransform;
     private Canvas canvas;
+
+    [SerializeField] private Image _icon;
+    [SerializeField] private TextMeshProUGUI _name;
+    [SerializeField] private TextMeshProUGUI _description;
+    
 
     private void Start()
     {
@@ -24,5 +31,12 @@ public class ToolTip : MonoBehaviour
         {
             rectTransform.localPosition = localPos + offset;
         }
+    }
+
+    public void SetupToolTip(Item item)
+    {
+        _icon.sprite = item.Icon;
+        _name.text = item.Name;
+        _description.text = item.Description;
     }
 }

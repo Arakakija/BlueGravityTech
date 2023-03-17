@@ -11,6 +11,8 @@ public class GameUI : Singleton<GameUI>
     [SerializeField] private GameObject PlayerInvetoryUI;
     [SerializeField] private GameObject ToolTipUI;
 
+    public bool IsDragging = false;
+
     private void Update()
     {
         
@@ -33,6 +35,11 @@ public class GameUI : Singleton<GameUI>
     public void ShowToolTipUI(bool value)
     {
         ToolTipUI.SetActive(value);
+    }
+    
+    public ToolTip GetToolTip()
+    {
+        return ToolTipUI.GetComponent<ToolTip>();
     }
     
     
