@@ -1980,7 +1980,7 @@ Animator:
   m_GameObject: {fileID: 6081435396838925190}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c2fc0aafc4ba14749a6cc196ffeb52b8, type: 2}
+  m_Controller: {fileID: 9100000, guid: ab937231d0600440fb0d8757568d78d7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3254,6 +3254,10 @@ GameObject:
   - component: {fileID: 6081435397684559371}
   - component: {fileID: 5127563870005222533}
   - component: {fileID: 4201563009631494735}
+  - component: {fileID: 391155718}
+  - component: {fileID: 391155719}
+  - component: {fileID: 391155720}
+  - component: {fileID: 391155721}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -3311,19 +3315,76 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6081435397684559370}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &391155718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6081435397684559370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d56225ab545aa4da1be6d711e42842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerController: {fileID: 391155720}
+  drag: 0.3
+--- !u!114 &391155719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6081435397684559370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f5673b956832e42a4fd028d91966c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InputReader>k__BackingField: {fileID: 391155721}
+  <Animator>k__BackingField: {fileID: 6081435396838925208}
+  <RB>k__BackingField: {fileID: 4201563009631494735}
+  <ForceReceiver>k__BackingField: {fileID: 391155718}
+  <PlayerController>k__BackingField: {fileID: 391155720}
+--- !u!114 &391155720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6081435397684559370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7376fcaa3a30784aa6efda20422372a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 100
+  isGrounded: 1
+--- !u!114 &391155721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6081435397684559370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0ae0189cc74b345a5096569cec39bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6081435397725189718
 GameObject:
   m_ObjectHideFlags: 0

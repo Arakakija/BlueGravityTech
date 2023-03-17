@@ -15,7 +15,7 @@ public class PlayerNormalState : PlayerBaseState
 
     public override void Enter()
     {
-        
+        _stateMachine.InputReader.OnInteractEvent += OnInteract;
     }
 
     public override void Tick(float DeltaTime)
@@ -51,5 +51,11 @@ public class PlayerNormalState : PlayerBaseState
     Vector2 CalculateMovement()
     {
         return _stateMachine.InputReader.MovementValue;
+    }
+    
+    private void OnInteract()
+    {
+        if(_stateMachine.PlayerController.CanInteract)
+            Debug.Log("OPEN SHOP");
     }
 }
