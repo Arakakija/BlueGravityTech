@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7e727b3a-d251-4218-8be3-88096d403b17" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BlueGravity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlueGravity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPUM/Res/Animation/AnimationNewController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SPUM/Res/Animation/AnimationNewController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SPUM/Res/Animation/NormalAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SPUM/Res/Animation/NormalAnimator.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStates/PlayerNormalState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStates/PlayerNormalState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +88,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679032989473</updated>
-      <workItem from="1679032992136" duration="3769000" />
+      <workItem from="1679032992136" duration="5437000" />
     </task>
     <servers />
   </component>
