@@ -590,15 +590,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 21
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 142190170752318335, guid: 32122f87f9a7545c38ded467d0b41b13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.15625, y: 0.15625}
+  m_Size: {x: 0.21875, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6081435395971021816
@@ -1830,15 +1830,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -19
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -9035144544001989217, guid: 32122f87f9a7545c38ded467d0b41b13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.15625, y: 0.15625}
+  m_Size: {x: 0.21875, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6081435396643237536
@@ -3213,15 +3213,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7896191252196906362, guid: 32122f87f9a7545c38ded467d0b41b13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.375, y: 0.3125}
+  m_Size: {x: 0.375, y: 0.28125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6081435397664269890
@@ -3355,6 +3355,7 @@ GameObject:
   - component: {fileID: 391155719}
   - component: {fileID: 391155720}
   - component: {fileID: 391155721}
+  - component: {fileID: 391155722}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -3438,7 +3439,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d56225ab545aa4da1be6d711e42842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 391155720}
   drag: 0.3
 --- !u!114 &391155719
 MonoBehaviour:
@@ -3456,7 +3456,6 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 6081435396838925208}
   <RB>k__BackingField: {fileID: 4201563009631494735}
   <ForceReceiver>k__BackingField: {fileID: 391155718}
-  <PlayerController>k__BackingField: {fileID: 391155720}
 --- !u!114 &391155720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3473,6 +3472,7 @@ MonoBehaviour:
   isGrounded: 1
   CanInteract: 0
   <PlayerUI>k__BackingField: {fileID: 5439076685337003261}
+  <PlayerInventory>k__BackingField: {fileID: 391155722}
 --- !u!114 &391155721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3485,6 +3485,77 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0ae0189cc74b345a5096569cec39bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &391155722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6081435397684559370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755381ac0b9faf04e83c793d5278e39f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ListItems>k__BackingField:
+  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
+  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
+  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
+  - {fileID: 11400000, guid: 4a78d49bcd320144fa28df1abe216449, type: 2}
+  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
+  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
+  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
+  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
+  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
+  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
+  - {fileID: 11400000, guid: e57cc96d06485944ca5fde9f17452fc4, type: 2}
+  - {fileID: 11400000, guid: 0c99a6514417cff43871f4ad44bbbb5e, type: 2}
+  - {fileID: 11400000, guid: a0abe7a4107a54b4b8eca0e5d1b42ac5, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  <HelmetHolder>k__BackingField: {fileID: 6081435397742698120}
+  <ArmorHolder>k__BackingField: {fileID: 6081435396126607579}
+  <Shoulder1Holder>k__BackingField: {fileID: 6081435397560000972}
+  <Shoulder2Holder>k__BackingField: {fileID: 6081435395886616633}
+  <Legs1Holder>k__BackingField: {fileID: 6081435397235613773}
+  <Legs2Holder>k__BackingField: {fileID: 6081435397187463115}
+  <WeaponHolder1>k__BackingField: {fileID: 6081435396353323276}
+  <WeaponHolder2>k__BackingField: {fileID: 6081435396239040375}
 --- !u!1 &6081435397725189718
 GameObject:
   m_ObjectHideFlags: 0

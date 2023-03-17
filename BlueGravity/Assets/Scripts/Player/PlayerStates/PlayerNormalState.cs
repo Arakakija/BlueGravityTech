@@ -55,7 +55,7 @@ public class PlayerNormalState : PlayerBaseState
     
     private void OnInteract()
     {
-        if (!_stateMachine.PlayerController.CanInteract) return;
+        if (!PlayerController.Instance.CanInteract) return;
         _stateMachine.Animator.SetFloat(Speed,0);
         _stateMachine.SwitchState(new PlayerInteractiveState(_stateMachine));
 

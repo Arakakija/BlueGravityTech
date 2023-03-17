@@ -11,9 +11,9 @@ public class PlayerInteractiveState : PlayerBaseState
 
     public override void Enter()
     {
-        _stateMachine.PlayerController.CanInteract = false;
+        PlayerController.Instance.CanInteract = false;
         _stateMachine.InputReader.OnCancelEvent += OnCancel;
-        _stateMachine.PlayerController.PlayerUI.ShowInteractButton(false);
+        PlayerController.Instance.PlayerUI.ShowInteractButton(false);
         
         GameUI.Instance.ShowTradeUI(true);
         
@@ -28,8 +28,8 @@ public class PlayerInteractiveState : PlayerBaseState
 
     public override void Exit()
     {
-        _stateMachine.PlayerController.PlayerUI.ShowInteractButton(true);
-        _stateMachine.PlayerController.CanInteract = true;
+        PlayerController.Instance.PlayerUI.ShowInteractButton(true);
+        PlayerController.Instance.CanInteract = true;
     }
 
     private void OnCancel()

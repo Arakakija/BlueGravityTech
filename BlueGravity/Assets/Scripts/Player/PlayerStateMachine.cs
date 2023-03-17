@@ -11,9 +11,7 @@ namespace StateMachine.Player
         
         [field: SerializeField] public Rigidbody2D RB { get; private set;}
         [field: SerializeField] public ForceReceiver ForceReceiver { get; private set;}
-        
-        [field: SerializeField] public  PlayerController PlayerController { get; private set; }
-        
+
         // Start is called before the first frame update
         void Start()
         {
@@ -28,7 +26,7 @@ namespace StateMachine.Player
 
         public void Move(Vector2 motion)
         {
-            RB.velocity = motion * PlayerController.speed;
+            RB.velocity = motion * PlayerController.Instance.speed;
         }
     }
 }

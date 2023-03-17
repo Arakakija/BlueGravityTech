@@ -15,4 +15,8 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: -6505695957970812123, guid: 61f60bf66a0684be3b448f6e237a3f12, type: 3}
   <Name>k__BackingField: Heavy Armor
   <Description>k__BackingField: AFHAIOF
-  <ItemTypeType>k__BackingField: 0
+  <ItemType>k__BackingField: 0
+  <SpriteSet>k__BackingField:
+  - {fileID: -6505695957970812123, guid: 61f60bf66a0684be3b448f6e237a3f12, type: 3}
+  - {fileID: 3257737980328237110, guid: 61f60bf66a0684be3b448f6e237a3f12, type: 3}
+  - {fileID: -5502725330888511627, guid: 61f60bf66a0684be3b448f6e237a3f12, type: 3}

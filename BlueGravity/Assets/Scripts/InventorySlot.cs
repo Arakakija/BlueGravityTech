@@ -26,19 +26,22 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         itemUI.SetupItemUI(item);
     }
 
-    public void OnDrop(PointerEventData eventData)
+    public virtual void OnDrop(PointerEventData eventData)
     {
         GameObject dropped = eventData.pointerDrag;
         ItemUI itemUI = dropped.GetComponent<ItemUI>();
-        
+        if(!itemUI) return;
         if (transform.childCount != 0)
         {
             transform.GetChild(0).SetParent(itemUI.parentAfterDrag);
         }
         
+        if (itemUI.parentAfterDrag.GetComponent<EquipmentSlot>() && itemUI.parentAfterDrag.childCount <= 0)
+        {
+            itemUI.parentAfterDrag.GetComponent<EquipmentSlot>().GetPlayerInventory().UnequipUI(
+                itemUI.item, itemUI.parentAfterDrag.GetComponent<EquipmentSlot>()._slotType);
+        }
         itemUI.parentAfterDrag = transform;
-       
-
     }
 
     private Item GetItem()

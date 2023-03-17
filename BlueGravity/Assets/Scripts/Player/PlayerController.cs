@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     public float speed = 5.0f;
 
@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public bool CanInteract;
     
     [field: SerializeField] public PlayerUI PlayerUI { get; private set; }
+    [field: SerializeField] public PlayerInventory PlayerInventory { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
