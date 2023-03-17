@@ -8,6 +8,7 @@ public class InputReader : MonoBehaviour,PlayerActions.IPlayerControlsActions
 {
     public event Action OnInteractEvent;
     public event Action OnCancelEvent;
+    public event Action OnInventoryEvent;
     private PlayerActions _actions;
 
     public Vector2 MovementValue { get; private set; }
@@ -35,5 +36,12 @@ public class InputReader : MonoBehaviour,PlayerActions.IPlayerControlsActions
     {
         if(!context.performed) return;
         OnCancelEvent?.Invoke();
+    }
+
+    public void OnInventory(InputAction.CallbackContext context)
+    {
+        if(!context.performed) return;
+        GameUI.Instance.ShowPlayerInventoryUI(!GameUI.Instance.IsInventoryOpen);
+        OnInventoryEvent?.Invoke();
     }
 }

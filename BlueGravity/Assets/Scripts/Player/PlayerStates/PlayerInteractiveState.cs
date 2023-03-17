@@ -14,7 +14,12 @@ public class PlayerInteractiveState : PlayerBaseState
         _stateMachine.PlayerController.CanInteract = false;
         _stateMachine.InputReader.OnCancelEvent += OnCancel;
         _stateMachine.PlayerController.PlayerUI.ShowInteractButton(false);
-        StopMove();
+        
+        GameUI.Instance.ShowTradeUI(true);
+        
+        if(!GameUI.Instance.IsInventoryOpen)
+            GameUI.Instance.ShowPlayerInventoryUI(true);
+     
     }
 
     public override void Tick(float DeltaTime)
@@ -29,6 +34,8 @@ public class PlayerInteractiveState : PlayerBaseState
 
     private void OnCancel()
     {
+        GameUI.Instance.ShowTradeUI(false);
+        GameUI.Instance.ShowPlayerInventoryUI(false);
         _stateMachine.SwitchState(new PlayerNormalState(_stateMachine));
     }
 }
