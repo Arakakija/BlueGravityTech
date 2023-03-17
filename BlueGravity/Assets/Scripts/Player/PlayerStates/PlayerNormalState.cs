@@ -45,7 +45,7 @@ public class PlayerNormalState : PlayerBaseState
     {
         AnimatorStateInfo stateInfo = _stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
         bool mirror = stateInfo.IsName("Normal State") && _stateMachine.InputReader.MovementValue.x > 0.5f;
-       _stateMachine.transform.localScale = new Vector3(mirror ? -1 : 1, 1, 1);
+       _stateMachine.Animator.transform.localScale = new Vector3(mirror ? -1 : 1, 1, 1);
     }
 
     Vector2 CalculateMovement()

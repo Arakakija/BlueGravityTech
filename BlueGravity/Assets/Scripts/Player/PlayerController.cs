@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
 
     public bool CanInteract;
+    
+    [field: SerializeField] public PlayerUI PlayerUI { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("Shop"))
         {
             CanInteract = true;
+            PlayerUI.ShowInteractButton(CanInteract);
         }
     }
 
@@ -35,6 +38,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Shop"))
         {
             CanInteract = false;
+            PlayerUI.ShowInteractButton(CanInteract);
         }
     }
 }
