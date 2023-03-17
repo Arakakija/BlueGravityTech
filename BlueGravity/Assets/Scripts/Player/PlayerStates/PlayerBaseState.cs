@@ -25,5 +25,10 @@ public abstract class PlayerBaseState : IState
     {
         _stateMachine.Move(_stateMachine.ForceReceiver.Movement * DeltaTime);
     }
+
+    protected void StopMove()
+    {
+        _stateMachine.Move(Vector2.zero);
+    }
     
 }

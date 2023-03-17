@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class InputReader : MonoBehaviour,PlayerActions.IPlayerControlsActions
 {
     public event Action OnInteractEvent;
+    public event Action OnCancelEvent;
     private PlayerActions _actions;
 
     public Vector2 MovementValue { get; private set; }
@@ -28,5 +29,11 @@ public class InputReader : MonoBehaviour,PlayerActions.IPlayerControlsActions
     {
         if(!context.performed) return;
         OnInteractEvent?.Invoke();
+    }
+
+    public void OnCancel(InputAction.CallbackContext context)
+    {
+        if(!context.performed) return;
+        OnCancelEvent?.Invoke();
     }
 }

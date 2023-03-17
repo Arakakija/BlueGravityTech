@@ -55,7 +55,9 @@ public class PlayerNormalState : PlayerBaseState
     
     private void OnInteract()
     {
-        if(_stateMachine.PlayerController.CanInteract)
-            Debug.Log("OPEN SHOP");
+        if (!_stateMachine.PlayerController.CanInteract) return;
+        _stateMachine.Animator.SetFloat(Speed,0);
+        _stateMachine.SwitchState(new PlayerInteractiveState(_stateMachine));
+
     }
 }
