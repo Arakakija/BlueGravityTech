@@ -42,6 +42,7 @@ public class InputReader : MonoBehaviour,PlayerActions.IPlayerControlsActions
     {
         if(!context.performed) return;
         GameUI.Instance.ShowPlayerInventoryUI(!GameUI.Instance.IsInventoryOpen);
+        
         OnInventoryEvent?.Invoke();
     }
 }
