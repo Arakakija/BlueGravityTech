@@ -15,7 +15,7 @@ public class PlayerController : Singleton<PlayerController>
     [field: SerializeField] public PlayerUI PlayerUI { get; private set; }
     [field: SerializeField] public PlayerInventory PlayerInventory { get; private set; }
 
-    public event Action<bool> OnBuyItem;
+    public Action<bool> OnBuyItem;
 
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -24,7 +24,6 @@ public class PlayerController : Singleton<PlayerController>
         {
             CanInteract = true;
             PlayerUI.ShowInteractButton(CanInteract);
-            GameUI.Instance.SetShopUI(col.gameObject.GetComponent<Inventory>());
         }
     }
 
@@ -45,7 +44,6 @@ public class PlayerController : Singleton<PlayerController>
             gold -= item.Value;
             if (gold < 0) gold = 0;
         }
-        OnBuyItem?.Invoke(CanBuyItem);
         return CanBuyItem;
     }
 

@@ -14,6 +14,7 @@ public class ShopSlot : MonoBehaviour, ISlot
     [SerializeField] private TextMeshProUGUI _name;
 
     [SerializeField] private TextMeshProUGUI _description;
+    [SerializeField] private TextMeshProUGUI _value;
 
     [SerializeField] private Button _buyButton;
 
@@ -28,11 +29,11 @@ public class ShopSlot : MonoBehaviour, ISlot
         _image.sprite = _itemOnSlot.Icon;
         _name.text = _itemOnSlot.Name;
         _description.text = _itemOnSlot.Description;
+        _value.text = "$" + _itemOnSlot.Value.ToString();
     }
 
     private void Buy()
     {
         PlayerController.Instance.PlayerInventory.Buy(_itemOnSlot);
-        gameObject.SetActive(false);
     }
 }
