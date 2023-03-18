@@ -11,20 +11,12 @@ public class PlayerController : Singleton<PlayerController>
     public bool isGrounded;
 
     public bool CanInteract;
-    
+
     [field: SerializeField] public PlayerUI PlayerUI { get; private set; }
     [field: SerializeField] public PlayerInventory PlayerInventory { get; private set; }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public event Action<bool> OnBuyItem;
+
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -32,7 +24,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             CanInteract = true;
             PlayerUI.ShowInteractButton(CanInteract);
-            GameUI.Instance.SetShopUI(col.gameObject.transform.parent.GetComponent<Inventory>());
+            GameUI.Instance.SetShopUI(col.gameObject.GetComponent<Inventory>());
         }
     }
 
@@ -44,4 +36,17 @@ public class PlayerController : Singleton<PlayerController>
             PlayerUI.ShowInteractButton(CanInteract);
         }
     }
+
+    public bool BuyItem(Item item)
+    {
+        bool CanBuyItem = item.Value <= gold;
+        if (CanBuyItem)
+        {
+            gold -= item.Value;
+            if (gold < 0) gold = 0;
+        }
+        OnBuyItem?.Invoke(CanBuyItem);
+        return CanBuyItem;
+    }
+
 }
