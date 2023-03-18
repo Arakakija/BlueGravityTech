@@ -50,6 +50,7 @@ public class InventoryUI : MonoBehaviour
     public void SetupShop(Inventory inventoryToSet)
     {
         _inventory = inventoryToSet;
+        if(_inventory.ListItems.Count == _GridInventory.childCount) return; 
         InitInventoryUI();
     }
     
