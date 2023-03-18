@@ -32,6 +32,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             CanInteract = true;
             PlayerUI.ShowInteractButton(CanInteract);
+            GameUI.Instance.SetShopUI(col.gameObject.transform.parent.GetComponent<Inventory>());
         }
     }
 

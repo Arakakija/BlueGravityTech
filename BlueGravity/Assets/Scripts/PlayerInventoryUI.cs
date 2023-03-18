@@ -1,9 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInventoryUI : InventoryUI
 {
+    private void Start()
+    {
+        InitInventoryUI();
+    }
+
     public void EquipUI(Item item,SlotType slotType)
     {
         item.EquipItem();

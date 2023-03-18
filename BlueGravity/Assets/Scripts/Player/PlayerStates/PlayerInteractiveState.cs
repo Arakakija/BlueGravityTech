@@ -7,6 +7,7 @@ public class PlayerInteractiveState : PlayerBaseState
 {
     public PlayerInteractiveState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
+        _stateMachine.RB.velocity = Vector2.zero;
     }
 
     public override void Enter()

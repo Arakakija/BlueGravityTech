@@ -20,13 +20,8 @@ public class InventoryUI : MonoBehaviour
     {
         _inventory.OnBuyItem -= RefreshInventory;
     }
-
-    void Start()
-    {
-        InitInventoryUI();
-    }
     
-    void InitInventoryUI()
+    protected void InitInventoryUI()
     {
         foreach (var item in _inventory.ListItems)
         {
@@ -60,4 +55,11 @@ public class InventoryUI : MonoBehaviour
         }
         return null;
     }
+
+    public void SetupShop(Inventory inventoryToSet)
+    {
+        _inventory = inventoryToSet;
+        InitInventoryUI();
+    }
+    
 }

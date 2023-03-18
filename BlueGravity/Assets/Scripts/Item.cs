@@ -15,6 +15,7 @@ public enum ItemType
 [CreateAssetMenu(fileName = "New Item", menuName = "Items/Item")]
 public class Item : ScriptableObject
 {
+    [field: SerializeField] public int Id { get; private set; }
     [field: SerializeField] public Sprite Icon { get; private set; }
     [field: SerializeField] public String Name { get; private set; }
     [field: SerializeField] public String Description { get; private set; }
