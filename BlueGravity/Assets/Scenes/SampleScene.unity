@@ -2943,6 +2943,7 @@ GameObject:
   - component: {fileID: 1899342075}
   - component: {fileID: 1899342074}
   - component: {fileID: 1899342078}
+  - component: {fileID: 1899342079}
   m_Layer: 5
   m_Name: GameUI
   m_TagString: Untagged
@@ -3051,6 +3052,18 @@ MonoBehaviour:
   ToolTipUI: {fileID: 1594522625}
   ShopInventory: {fileID: 858846633}
   IsDragging: 0
+--- !u!114 &1899342079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899342073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d79da46cf357b4bb151a1ba6754aab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1923838597
 GameObject:
   m_ObjectHideFlags: 0

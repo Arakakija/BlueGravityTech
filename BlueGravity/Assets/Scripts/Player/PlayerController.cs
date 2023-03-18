@@ -17,12 +17,15 @@ public class PlayerController : Singleton<PlayerController>
 
     public Action<bool> OnBuyItem;
 
+    public IInteractable Interactable;
+
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Shop"))
         {
             CanInteract = true;
+            Interactable = col.gameObject.GetComponent<IInteractable>();
             PlayerUI.ShowInteractButton(CanInteract);
         }
     }
@@ -32,6 +35,7 @@ public class PlayerController : Singleton<PlayerController>
         if (other.gameObject.CompareTag("Shop"))
         {
             CanInteract = false;
+            Interactable = null;
             PlayerUI.ShowInteractButton(CanInteract);
         }
     }

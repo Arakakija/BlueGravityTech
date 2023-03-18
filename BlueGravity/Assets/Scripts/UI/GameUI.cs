@@ -12,6 +12,9 @@ public class GameUI : Singleton<GameUI>
 
     [SerializeField] private InventoryUI ShopInventory;
 
+    public Action OnShopEvent;
+    public Action OnCancelEvent;
+
     public bool IsDragging = false;
 
     private void Update()
@@ -47,6 +50,4 @@ public class GameUI : Singleton<GameUI>
     {
         return ToolTipUI.GetComponent<ToolTip>();
     }
-    
-    
 }
