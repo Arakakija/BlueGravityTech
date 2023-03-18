@@ -8,7 +8,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private GameObject _slotPrefab;
     [SerializeField] protected Inventory _inventory;
 
-    [SerializeField] private Transform _GridInventory;
+    [SerializeField] protected Transform _GridInventory;
     // Start is called before the first frame update
 
 
@@ -25,14 +25,18 @@ public class InventoryUI : MonoBehaviour
     protected void RefreshInventory(bool shouldRefresh)
     {
         if(!shouldRefresh) return;
-        for (int i = 0; i < _inventory.ListItems.Count; i++)
+        for (int i = 0; i < _inventory.ListItems.Count -1 ; i++)
         {
             var slot = _GridInventory.GetChild(i);
             if(!slot) return;
             var item = _inventory.ListItems[i];
             if (item && slot.childCount == 0 && !item.IsEquipped) 
                 slot.GetComponent<ISlot>().SetupSlot(item);
+            else
+                if(!item && slot.childCount != 0)Destroy(slot.GetChild(0).gameObject);
         }
+        
+       
     }
 
     Transform GetFirstEmptySlot()
@@ -53,5 +57,9 @@ public class InventoryUI : MonoBehaviour
         if(_inventory.ListItems.Count == _GridInventory.childCount) return; 
         InitInventoryUI();
     }
-    
+
+    public Inventory GetInventory()
+    {
+        return _inventory;
+    }
 }

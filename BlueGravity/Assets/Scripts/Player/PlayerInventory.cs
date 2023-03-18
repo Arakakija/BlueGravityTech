@@ -24,9 +24,15 @@ public class PlayerInventory : Inventory
         return CanBuy;       
     }
     
-    public void Sell(Item item)
+    public void Sell(List<Item> itemsToSell)
     {
-        ListItems.Remove(item);
+        foreach (var itemToSell in itemsToSell)
+        {
+            var item = ListItems.Find(item => item == itemToSell);
+            if (item) ListItems.Remove(item);
+        }
+
+        PlayerController.Instance.OnSellItem?.Invoke(true);
     }
     
 }

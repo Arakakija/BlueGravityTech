@@ -16,6 +16,7 @@ public class PlayerController : Singleton<PlayerController>
     [field: SerializeField] public PlayerInventory PlayerInventory { get; private set; }
 
     public Action<bool> OnBuyItem;
+    public Action<bool> OnSellItem;
 
     public IInteractable Interactable;
 

@@ -41,6 +41,14 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             itemUI.parentAfterDrag.GetComponent<EquipmentSlot>().GetPlayerInventory().UnequipUI(
                 itemUI.item, itemUI.parentAfterDrag.GetComponent<EquipmentSlot>()._slotType);
         }
+        
+        if (itemUI.parentAfterDrag.GetComponent<SellInventorySlot>())
+        {
+            itemUI.parentAfterDrag.GetComponent<SellInventorySlot>().GetSellInventory().RemoveItem(itemUI.item);
+            itemUI.parentAfterDrag.GetComponent<SellInventorySlot>().GetSellInventoryUI().RemoveGold(itemUI.item.Value);
+        }
+        
+        
         itemUI.parentAfterDrag = transform;
     }
 

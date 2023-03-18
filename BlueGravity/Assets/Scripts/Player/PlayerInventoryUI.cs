@@ -17,19 +17,20 @@ public class PlayerInventoryUI : InventoryUI
     {
         PlayerController.Instance.OnBuyItem += RefreshInventory;
         PlayerController.Instance.OnBuyItem += RefreshGold;
+        
     }
 
     private void OnDisable()
     {
         PlayerController.Instance.OnBuyItem -= RefreshInventory;
         PlayerController.Instance.OnBuyItem -= RefreshGold;
+        
     }
 
 
     public void EquipUI(Item item,SlotType slotType)
     {
         item.EquipItem();
-        _inventory.RemoveItem(item);
         switch (slotType)
         {
             case SlotType.Helmet:
@@ -57,7 +58,6 @@ public class PlayerInventoryUI : InventoryUI
     public void UnequipUI(Item item,SlotType slotType)
     {
         item.UnEquipItem();
-        _inventory.AddItemAtFirstEmpty(item);
         switch (slotType)
         {
             case SlotType.Helmet:

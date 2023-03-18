@@ -34,6 +34,11 @@ public abstract class Inventory : MonoBehaviour
         ListItems.Add(Instantiate(itemToAdd));
     }
     
+    public void AddRefItem(Item itemToAdd)
+    {
+        ListItems.Add(itemToAdd);
+    }
+    
     public void AddItemAtFirstEmpty(Item itemToAdd)
     {
         for (int i = 0; i < ListItems.Count; i++)
@@ -49,4 +54,10 @@ public abstract class Inventory : MonoBehaviour
         ListItems.Remove(itemToAdd);
     }
     
+    public void EmptyList()
+    {
+        ListItems.Clear();
+    }
 }
+    
+
