@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public abstract class Inventory : MonoBehaviour
 {
+    public Action<bool> OnBuyItem; 
     [field: SerializeField]
     public List<Item> ListItems
     {
@@ -30,7 +32,17 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(Item itemToAdd)
     {
-        ListItems.Add(itemToAdd);
+        ListItems.Add(Instantiate(itemToAdd));
+    }
+    
+    public void AddItemAtFirstEmpty(Item itemToAdd)
+    {
+        for (int i = 0; i < ListItems.Count; i++)
+        {
+            if(ListItems[i]) continue;
+            ListItems[i] = Instantiate(itemToAdd);
+            break;
+        }
     }
     
     public void RemoveItem(Item itemToAdd)

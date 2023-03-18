@@ -20,3 +20,5 @@ MonoBehaviour:
   - {fileID: -3992137426342128158, guid: 1810f09d324df46289d58e432045bcd1, type: 3}
   - {fileID: -1120026500337400717, guid: 1810f09d324df46289d58e432045bcd1, type: 3}
   - {fileID: -1554369935797715747, guid: 1810f09d324df46289d58e432045bcd1, type: 3}
+  <IsEquipped>k__BackingField: 0
+  <value>k__BackingField: 0

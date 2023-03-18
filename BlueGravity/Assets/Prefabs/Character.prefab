@@ -3469,6 +3469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
+  gold: 500
   isGrounded: 1
   CanInteract: 0
   <PlayerUI>k__BackingField: {fileID: 5439076685337003261}
@@ -3498,31 +3499,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ListItems>k__BackingField:
-  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
-  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
-  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
-  - {fileID: 11400000, guid: 4a78d49bcd320144fa28df1abe216449, type: 2}
-  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
-  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
-  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
-  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
-  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
-  - {fileID: 11400000, guid: b25a6e6bf85267e4c8b156a01273e637, type: 2}
-  - {fileID: 11400000, guid: e57cc96d06485944ca5fde9f17452fc4, type: 2}
-  - {fileID: 11400000, guid: 0c99a6514417cff43871f4ad44bbbb5e, type: 2}
-  - {fileID: 11400000, guid: a0abe7a4107a54b4b8eca0e5d1b42ac5, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

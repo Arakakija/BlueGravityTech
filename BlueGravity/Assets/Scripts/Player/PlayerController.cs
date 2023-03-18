@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerController : Singleton<PlayerController>
 {
     public float speed = 5.0f;
+    public float gold = 500.0f;
 
     public bool isGrounded;
 

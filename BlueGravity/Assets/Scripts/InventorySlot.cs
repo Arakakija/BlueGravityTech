@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,IDropHandler
+public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,IDropHandler,ISlot
 {
     [FormerlySerializedAs("_itemUI")] [SerializeField] private GameObject _itemUIGO;
     public void OnPointerEnter(PointerEventData eventData)

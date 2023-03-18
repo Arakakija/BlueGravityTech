@@ -18,3 +18,5 @@ MonoBehaviour:
   <ItemType>k__BackingField: 4
   <SpriteSet>k__BackingField:
   - {fileID: 21300000, guid: 96abf63d683f04dee937fa2e2872886b, type: 3}
+  <IsEquipped>k__BackingField: 0
+  <value>k__BackingField: 0

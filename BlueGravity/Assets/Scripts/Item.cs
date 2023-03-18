@@ -23,14 +23,15 @@ public class Item : ScriptableObject
     [field: SerializeField] public Sprite[] SpriteSet { get; private set; }
     [field: SerializeField] public bool IsEquipped { get; private set; }
 
+    [field: SerializeField] public int value { get; private set; }
+
     public void EquipItem()
     {
-        IsEquipped = true;
+        this.IsEquipped = true;
     }
     
     public void UnEquipItem()
     {
-        IsEquipped = false;
+        this.IsEquipped = false;
     }
-    
 }

@@ -15,7 +15,7 @@ public class ItemUI : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandl
     public void SetupItemUI(Item item)
     {
         this.item = item;
-        image.sprite = item.Icon;
+        image.sprite = this.item.Icon;
     }
     
     public void OnBeginDrag(PointerEventData eventData)
