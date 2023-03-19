@@ -3533,8 +3533,8 @@ MonoBehaviour:
   <ArmorHolder>k__BackingField: {fileID: 6081435396126607579}
   <Shoulder1Holder>k__BackingField: {fileID: 6081435397560000972}
   <Shoulder2Holder>k__BackingField: {fileID: 6081435395886616633}
-  <Legs1Holder>k__BackingField: {fileID: 6081435397235613773}
-  <Legs2Holder>k__BackingField: {fileID: 6081435397187463115}
+  <Legs1Holder>k__BackingField: {fileID: 6081435396076576157}
+  <Legs2Holder>k__BackingField: {fileID: 6081435397664269892}
   <WeaponHolder1>k__BackingField: {fileID: 6081435396353323276}
   <WeaponHolder2>k__BackingField: {fileID: 6081435396239040375}
 --- !u!1 &6081435397725189718

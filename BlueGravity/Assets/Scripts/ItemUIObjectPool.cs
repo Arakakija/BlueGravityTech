@@ -12,7 +12,7 @@ public class ItemUIObjectPool : MonoBehaviour
 
     private void Start()
     {
-        _objectPool = new ObjectPool<ItemUI>(prefab.GetComponent<ItemUI>(), initialSize);
+        _objectPool = new ObjectPool<ItemUI>(prefab.GetComponent<ItemUI>(), initialSize,transform);
     }
 
     public ItemUI SpawnObjectFromPool(Transform parent)

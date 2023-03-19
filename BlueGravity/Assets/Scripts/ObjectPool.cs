@@ -6,10 +6,12 @@ public class ObjectPool<T> where T : Component
 {
      private Queue<T> _poolQueue = new Queue<T>();
      private T prefab;
+     private Transform parent;
 
-     public ObjectPool(T prefab, int initSize)
+     public ObjectPool(T prefab, int initSize, Transform parent)
      {
           this.prefab = prefab;
+          this.parent = parent;
           AddToPool(initSize);
      }
 
@@ -35,7 +37,7 @@ public class ObjectPool<T> where T : Component
      {
           for (int i = 0; i < size; i++)
           {
-               T obj = Object.Instantiate(prefab);
+               T obj = Object.Instantiate(prefab, parent, true);
                obj.gameObject.SetActive(false);
                _poolQueue.Enqueue(obj);
           }
