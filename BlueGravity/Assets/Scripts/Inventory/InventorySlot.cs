@@ -22,7 +22,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void SetupSlot(Item item)
     {
-        ItemUI itemUI = GameObject.Instantiate(_itemUIGO, this.transform).GetComponent<ItemUI>();
+        ItemUI itemUI = GameUI.Instance.pool.SpawnObjectFromPool(transform);
         itemUI.SetupItemUI(item);
     }
 

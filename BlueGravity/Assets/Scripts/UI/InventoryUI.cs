@@ -33,7 +33,7 @@ public class InventoryUI : MonoBehaviour
             if (item && slot.childCount == 0 && !item.IsEquipped) 
                 slot.GetComponent<ISlot>().SetupSlot(item);
             else
-                if(!item && slot.childCount != 0)Destroy(slot.GetChild(0).gameObject);
+                if(!item && slot.childCount != 0)GameUI.Instance.pool.ReturnObjectToPool(slot.GetChild(0).GetComponent<ItemUI>());
         }
         
        

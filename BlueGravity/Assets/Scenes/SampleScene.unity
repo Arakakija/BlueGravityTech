@@ -423,6 +423,38 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2999606473341327510, guid: b0b7e64669e86cf4daf3bcf7479e516d, type: 3}
   m_PrefabInstance: {fileID: 21022505}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &42195298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 42195300}
+  m_Layer: 0
+  m_Name: ObjectoPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &42195300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42195298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.6875029, y: 0.83539635, z: 3941.9556}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 382648203}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &94145091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,6 +1229,52 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2999606473341327510, guid: b0b7e64669e86cf4daf3bcf7479e516d, type: 3}
   m_PrefabInstance: {fileID: 370296444}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &382648202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 382648203}
+  - component: {fileID: 382648204}
+  m_Layer: 0
+  m_Name: ItemUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &382648203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382648202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 42195300}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &382648204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382648202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59fe39b0d1f92344fb1a2a152b0cf147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2865239501270340337, guid: 145052b67f689804b9df0664ac867c90, type: 3}
+  initialSize: 50
 --- !u!4 &391155715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6081435397684559371, guid: c4b12dc349053964ba957137f607e7c4, type: 3}
@@ -5875,6 +5953,7 @@ MonoBehaviour:
   PlayerInvetoryUI: {fileID: 160654259}
   ToolTipUI: {fileID: 1594522625}
   ShopInventory: {fileID: 858846633}
+  <pool>k__BackingField: {fileID: 382648204}
   IsDragging: 0
 --- !u!114 &1899342079
 MonoBehaviour:
