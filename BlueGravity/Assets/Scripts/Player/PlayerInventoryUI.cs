@@ -15,17 +15,19 @@ public class PlayerInventoryUI : InventoryUI
     
     private void OnEnable()
     {
-        PlayerController.Instance.OnBuyItem += RefreshInventory;
-        PlayerController.Instance.OnBuyItem += RefreshGold;
-        PlayerController.Instance.OnSellItem += RefreshGold;
+        PlayerController.OnBuyItem += RefreshInventory;
+        PlayerController.OnBuyItem += RefreshGold;
+        PlayerController.OnSellItem += RefreshGold;
+        PlayerController.OnGainGold += RefreshGold;
         
     }
 
     private void OnDisable()
     {
-        PlayerController.Instance.OnBuyItem -= RefreshInventory;
-        PlayerController.Instance.OnBuyItem -= RefreshGold;
-        PlayerController.Instance.OnSellItem -= RefreshGold;
+        PlayerController.OnBuyItem -= RefreshInventory;
+        PlayerController.OnBuyItem -= RefreshGold;
+        PlayerController.OnSellItem -= RefreshGold;
+        PlayerController.OnGainGold -= RefreshGold;
     }
 
 

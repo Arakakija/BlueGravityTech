@@ -12,6 +12,8 @@ public class InputReader : MonoBehaviour,PlayerActions.IPlayerControlsActions
     private PlayerActions _actions;
 
     public Vector2 MovementValue { get; private set; }
+
+    public bool isAttacking = false;
     
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,7 @@ public class InputReader : MonoBehaviour,PlayerActions.IPlayerControlsActions
 
     public void OnCancel(InputAction.CallbackContext context)
     {
-        if(!context.started) return;
+        if(!context.performed) return;
         OnCancelEvent?.Invoke();
     }
 
@@ -44,5 +46,17 @@ public class InputReader : MonoBehaviour,PlayerActions.IPlayerControlsActions
         GameUI.Instance.ShowPlayerInventoryUI(!GameUI.Instance.IsInventoryOpen);
         
         OnInventoryEvent?.Invoke();
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            isAttacking = true;
+        }
+        else if(context.canceled)
+        {
+            isAttacking = false;
+        }
     }
 }

@@ -15,10 +15,13 @@ public class PlayerController : Singleton<PlayerController>
     [field: SerializeField] public PlayerUI PlayerUI { get; private set; }
     [field: SerializeField] public PlayerInventory PlayerInventory { get; private set; }
 
-    public Action<bool> OnBuyItem;
-    public Action<bool> OnSellItem;
+    public static Action<bool> OnBuyItem;
+    public static Action<bool> OnSellItem;
+    public static Action<bool> OnGainGold;
 
     public IInteractable Interactable;
+
+    public AttackAnimData data;
 
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -55,6 +58,7 @@ public class PlayerController : Singleton<PlayerController>
     public void GainGold(int amount)
     {
         gold += amount;
+        OnGainGold?.Invoke(true);
     }
 
 }

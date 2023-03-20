@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerNormalState : PlayerBaseState
 {
     private static readonly int Speed = Animator.StringToHash("Speed");
-    private static readonly int Mirror = Animator.StringToHash("Mirror");
+  
     private const float AnimatorDampTime = 0.1f;
     private const float FixedTransitionDuration = 0.1f;
     public PlayerNormalState(PlayerStateMachine stateMachine) : base(stateMachine)
@@ -16,10 +16,17 @@ public class PlayerNormalState : PlayerBaseState
     public override void Enter()
     {
         _stateMachine.InputReader.OnInteractEvent += OnInteract;
+        _stateMachine.Animator.CrossFadeInFixedTime("Normal State",FixedTransitionDuration);
     }
 
     public override void Tick(float DeltaTime)
     {
+        if (_stateMachine.InputReader.isAttacking)
+        {
+            _stateMachine.SwitchState(_stateMachine.AttackState);
+            return;
+        }
+        
         Vector2 movement = CalculateMovement();
         Move(movement, DeltaTime);
 

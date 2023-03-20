@@ -20,7 +20,7 @@ public class PlayerInventory : Inventory
     { 
         bool CanBuy = PlayerController.Instance.BuyItem(item);
         if(CanBuy) AddItemAtFirstEmpty(item);
-        PlayerController.Instance.OnBuyItem?.Invoke(CanBuy);
+        PlayerController.OnBuyItem?.Invoke(CanBuy);
         return CanBuy;       
     }
     
@@ -36,7 +36,7 @@ public class PlayerInventory : Inventory
             }
         }
         
-        PlayerController.Instance.OnSellItem?.Invoke(true);
+        PlayerController.OnSellItem?.Invoke(true);
     }
     
 }
