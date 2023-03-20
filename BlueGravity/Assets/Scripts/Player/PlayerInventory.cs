@@ -29,9 +29,13 @@ public class PlayerInventory : Inventory
         foreach (var itemToSell in itemsToSell)
         {
             var item = ListItems.Find(item => item == itemToSell);
-            if (item) ListItems.Remove(item);
+            if (item)
+            {
+                ListItems.Remove(item);
+                PlayerController.Instance.GainGold(item.Value);
+            }
         }
-
+        
         PlayerController.Instance.OnSellItem?.Invoke(true);
     }
     

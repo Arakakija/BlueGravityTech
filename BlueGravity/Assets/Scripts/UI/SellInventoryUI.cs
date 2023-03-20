@@ -45,17 +45,18 @@ public class SellInventoryUI : InventoryUI
         PlayerController.Instance.PlayerInventory.Sell(_inventory.ListItems);
         _inventory.EmptyList();
         ClearInventory();
+        gold = 0;
+        Gold.text = gold.ToString();
     }
 
     void ClearInventory()
     {
         for (int i = 0; i < _GridInventory.childCount - 1; i++)
         {
-            Debug.Log(_GridInventory.childCount - 1);
             if (_GridInventory.GetChild(i).childCount <= 0) continue; 
             var item = _GridInventory.GetChild(i).GetChild(0);
             if(!item) continue;
-            Destroy(item.gameObject);
+            GameUI.Instance.pool.ReturnObjectToPool(item.GetComponent<ItemUI>());
 
         }
     }

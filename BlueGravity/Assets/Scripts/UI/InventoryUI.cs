@@ -22,7 +22,7 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    protected void RefreshInventory(bool shouldRefresh)
+    protected virtual void RefreshInventory(bool shouldRefresh)
     {
         if(!shouldRefresh) return;
         for (int i = 0; i < _inventory.ListItems.Count -1 ; i++)
@@ -51,10 +51,14 @@ public class InventoryUI : MonoBehaviour
         return null;
     }
 
-    public void SetupShop(Inventory inventoryToSet)
+    public void SetupShop(ShopInventory inventoryToSet)
     {
         _inventory = inventoryToSet;
-        if(_inventory.ListItems.Count == _GridInventory.childCount) return; 
+        if (_inventory.ListItems.Count == _GridInventory.childCount)
+        {
+            RefreshInventory(true);
+            return;
+        } 
         InitInventoryUI();
     }
 

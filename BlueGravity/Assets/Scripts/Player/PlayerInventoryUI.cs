@@ -17,6 +17,7 @@ public class PlayerInventoryUI : InventoryUI
     {
         PlayerController.Instance.OnBuyItem += RefreshInventory;
         PlayerController.Instance.OnBuyItem += RefreshGold;
+        PlayerController.Instance.OnSellItem += RefreshGold;
         
     }
 
@@ -24,7 +25,7 @@ public class PlayerInventoryUI : InventoryUI
     {
         PlayerController.Instance.OnBuyItem -= RefreshInventory;
         PlayerController.Instance.OnBuyItem -= RefreshGold;
-        
+        PlayerController.Instance.OnSellItem -= RefreshGold;
     }
 
 

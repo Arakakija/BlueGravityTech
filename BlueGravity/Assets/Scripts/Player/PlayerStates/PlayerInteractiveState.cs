@@ -7,7 +7,7 @@ public class PlayerInteractiveState : PlayerBaseState
 {
     public PlayerInteractiveState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
-        _stateMachine.RB.velocity = Vector2.zero;
+      
     }
 
     public override void Enter()
@@ -27,11 +27,12 @@ public class PlayerInteractiveState : PlayerBaseState
     {
         PlayerController.Instance.PlayerUI.ShowInteractButton(true);
         PlayerController.Instance.CanInteract = true;
+        _stateMachine.InputReader.OnCancelEvent -= OnCancel;
     }
 
     private void OnCancel()
     {
         GameUI.Instance.OnCancelEvent?.Invoke();
-        _stateMachine.SwitchState(new PlayerNormalState(_stateMachine));
+        _stateMachine.SwitchState(_stateMachine.NormalState);
     }
 }

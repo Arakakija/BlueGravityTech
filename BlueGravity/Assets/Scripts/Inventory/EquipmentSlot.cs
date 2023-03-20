@@ -36,17 +36,19 @@ public class EquipmentSlot : InventorySlot
         }
         
         _inventory.EquipUI(itemUI.item, _slotType);
-
-        if (itemUI.parentAfterDrag.GetComponent<EquipmentSlot>() && itemUI.parentAfterDrag.childCount <= 0)
-        {
-            itemUI.parentAfterDrag.GetComponent<EquipmentSlot>().GetPlayerInventory().UnequipUI(
-                itemUI.item, itemUI.parentAfterDrag.GetComponent<EquipmentSlot>()._slotType);
-        }
         
-        if (itemUI.parentAfterDrag.GetComponent<SellInventorySlot>())
+        var equipment = itemUI.parentAfterDrag.GetComponent<EquipmentSlot>();
+        if (equipment && itemUI.parentAfterDrag.childCount <= 0)
         {
-            itemUI.parentAfterDrag.GetComponent<SellInventorySlot>().GetSellInventory().RemoveItem(itemUI.item);
-            itemUI.parentAfterDrag.GetComponent<SellInventorySlot>().GetSellInventoryUI().RemoveGold(itemUI.item.Value);
+            equipment.GetPlayerInventory().UnequipUI(
+                itemUI.item, equipment._slotType);
+        }
+
+        var SellSLot = itemUI.parentAfterDrag.GetComponent<SellInventorySlot>();
+        if (SellSLot)
+        {
+            SellSLot.GetSellInventory().RemoveItem(itemUI.item);
+            SellSLot.GetSellInventoryUI().RemoveGold(itemUI.item.Value);
         }
         
         itemUI.parentAfterDrag = transform;

@@ -52,4 +52,9 @@ public class PlayerController : Singleton<PlayerController>
         return CanBuyItem;
     }
 
+    public void GainGold(int amount)
+    {
+        gold += amount;
+    }
+
 }

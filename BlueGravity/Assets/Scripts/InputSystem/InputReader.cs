@@ -34,7 +34,7 @@ public class InputReader : MonoBehaviour,PlayerActions.IPlayerControlsActions
 
     public void OnCancel(InputAction.CallbackContext context)
     {
-        if(!context.performed) return;
+        if(!context.started) return;
         OnCancelEvent?.Invoke();
     }
 

@@ -12,10 +12,15 @@ namespace StateMachine.Player
         [field: SerializeField] public Rigidbody2D RB { get; private set;}
         [field: SerializeField] public ForceReceiver ForceReceiver { get; private set;}
 
+        public PlayerInteractiveState InteractiveState { get; private set; }
+        public PlayerNormalState NormalState { get; private set; }
+
         // Start is called before the first frame update
         void Start()
         {
-            SwitchState(new PlayerNormalState(this));
+            InteractiveState = new PlayerInteractiveState(this);
+            NormalState = new PlayerNormalState(this);
+            SwitchState(NormalState);
         }
 
         // Update is called once per frame

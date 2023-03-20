@@ -32,6 +32,6 @@ public class GameUIShopState : GameUIBaseState
 
     void Cancel()
     {
-        _stateMachine.SwitchState(new GameUINormalState(_stateMachine));
+        _stateMachine.SwitchState(_stateMachine.NormalState);
     }
 }

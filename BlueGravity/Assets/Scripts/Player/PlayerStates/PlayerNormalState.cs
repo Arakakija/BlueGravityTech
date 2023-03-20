@@ -38,7 +38,7 @@ public class PlayerNormalState : PlayerBaseState
 
     public override void Exit()
     {
-        
+        _stateMachine.InputReader.OnInteractEvent -= OnInteract;
     }
 
     void TryMirrorPlayer()
@@ -56,8 +56,9 @@ public class PlayerNormalState : PlayerBaseState
     private void OnInteract()
     {
         if (!PlayerController.Instance.CanInteract) return;
+        _stateMachine.RB.velocity = Vector2.zero;
         _stateMachine.Animator.SetFloat(Speed,0);
-        _stateMachine.SwitchState(new PlayerInteractiveState(_stateMachine));
+        _stateMachine.SwitchState(_stateMachine.InteractiveState);
 
     }
 }

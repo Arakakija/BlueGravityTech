@@ -16,11 +16,12 @@ public class SellInventorySlot : InventorySlot
         {
             transform.GetChild(0).SetParent(itemUI.parentAfterDrag);
         }
-        
-        if (itemUI.parentAfterDrag.GetComponent<EquipmentSlot>() && itemUI.parentAfterDrag.childCount <= 0)
+
+        var equipment = itemUI.parentAfterDrag.GetComponent<EquipmentSlot>();
+        if (equipment && itemUI.parentAfterDrag.childCount <= 0)
         {
-            itemUI.parentAfterDrag.GetComponent<EquipmentSlot>().GetPlayerInventory().UnequipUI(
-                itemUI.item, itemUI.parentAfterDrag.GetComponent<EquipmentSlot>()._slotType);
+            equipment.GetPlayerInventory().UnequipUI(
+                itemUI.item, equipment._slotType);
         }
         
         _inventoryUI.GetInventory().AddRefItem(itemUI.item);

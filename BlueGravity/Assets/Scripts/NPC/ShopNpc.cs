@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShopNpc : MonoBehaviour,IInteractable
 {
-    [SerializeField] private Inventory _inventory;
+    [SerializeField] private ShopInventory _inventory;
     
     public void Interact()
     {

@@ -27,6 +27,6 @@ public class GameUINormalState : GameUIBaseState
 
     void OnInteract() 
     {
-        _stateMachine.SwitchState(new GameUIShopState(_stateMachine));
+        _stateMachine.SwitchState(_stateMachine.ShopState);
     }
 }

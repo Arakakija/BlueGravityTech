@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class GameUI : Singleton<GameUI>
 {
-    [SerializeField] private GameObject TradeUI;
-    [SerializeField] private GameObject PlayerInvetoryUI;
-    [SerializeField] private GameObject ToolTipUI;
+    [SerializeField] private CanvasGroup TradeUI;
+    [SerializeField] private CanvasGroup PlayerInvetoryUI;
+    [SerializeField] private CanvasGroup ToolTipUI;
 
     [SerializeField] private InventoryUI ShopInventory;
 
@@ -22,12 +22,12 @@ public class GameUI : Singleton<GameUI>
 
     public bool IsInventoryOpen { get; private set;}
 
-    public void ShowTradeUI(bool value) 
+    public void ShowTradeUI(bool value)
     {
-        TradeUI.SetActive(value);
+        TradeUI.alpha = value ? 1 : 0;
     }
 
-    public void SetShopUI(Inventory inventory)
+    public void SetShopUI(ShopInventory inventory)
     {
         ShopInventory.SetupShop(inventory);
     }
@@ -35,13 +35,13 @@ public class GameUI : Singleton<GameUI>
     public void ShowPlayerInventoryUI(bool value)
     {
         IsInventoryOpen = value;
-        PlayerInvetoryUI.SetActive(value);
+        PlayerInvetoryUI.alpha = value ? 1 : 0;
         if(value == false && ToolTipUI.gameObject.activeInHierarchy) ShowToolTipUI(false);
     }
 
     public void ShowToolTipUI(bool value)
     {
-        ToolTipUI.SetActive(value);
+        ToolTipUI.alpha = value ? 1 : 0;
     }
     
     public ToolTip GetToolTip()
